@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Дошка оголошень</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="data:,">
+</head>
+<body>
+
+    <header>
+        <h1>Дошка оголошень</h1>
+        <nav>
+            <a href="#categories">Категорії</a>
+            <a href="#ads">Оголошення</a>
+            <button type="button" id="toggle-form-btn" class="btn-add">Додати оголошення</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="add-ad">
+            <form id="add-ad-form" class="add-form" action="#" method="post">
+                <h2>Нове оголошення</h2>
+
+                <label for="ad-title">Заголовок:</label>
+                <input type="text" id="ad-title" name="title" required>
+
+                <label for="ad-category">Категорія:</label>
+                <select id="ad-category" name="category" required>
+                    <option value="">-- оберіть категорію --</option>
+                    <option value="Речі">Речі</option>
+                    <option value="Послуги">Послуги</option>
+                    <option value="Тварини">Тварини</option>
+                </select>
+
+                <label for="ad-description">Опис:</label>
+                <textarea id="ad-description" name="description" rows="4" maxlength="200"></textarea>
+                <span id="description-counter" class="char-counter">Залишилось символів: 200</span>
+
+                <button type="submit">Опублікувати</button>
+            </form>
+        </section>
+
+        <section id="filter">
+            <h2>Фільтр за категорією</h2>
+            <form action="#" method="get">
+                <label for="category-select">Оберіть категорію:</label>
+                <select id="category-select" name="category">
+                    <option value="all">Всі оголошення</option>
+                    <option value="items">Речі</option>
+                    <option value="services">Послуги</option>
+                </select>
+                <button type="submit">Застосувати</button>
+            </form>
+        </section>
+
+        <section id="ads">
+            <h2>Оголошення</h2>
+            
+            <div class="list-controls">
+                <button type="button" id="reload-btn" class="btn-reload">Оновити</button>
+                <p id="load-status" class="load-status" role="status"></p>
+            </div>
+
+            <p id="listings-count">
+                Активних оголошень: 0
+            </p>
+            
+            <div class="cards-grid" id="listings-list">
+                <article class="card static-card">
+                    <span class="badge badge-items">Речі</span>
+                    <h3>Продам велосипед гірський</h3>
+                    <img src="https://placehold.co/400x200/EEE/31343C?text=Велосипед" alt="Гірський велосипед чорного кольору">
+                    <p>Стан чудовий, майже не користувалися. Ціна: 3500 грн.</p>
+                    <time class="ad-date">Додано: 27 жовтня 2026</time>
+                </article>
+
+                <article class="card static-card">
+                    <span class="badge badge-services">Послуги</span>
+                    <h3>Допоможу з ремонтом сантехніки</h3>
+                    <img src="https://placehold.co/400x200/EEE/31343C?text=Інструменти" alt="Набір інструментів для ремонту">
+                    <p>Швидка заміна кранів, труб, усунення протікань. Сусідям знижка 10%.</p>
+                    <time class="ad-date">Додано: 26 жовтня 2026</time>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <aside id="ad-details">
+        <h2>Деталі обраного оголошення</h2>
+        <p>Натисніть на оголошення зі списку, щоб переглянути детальний опис та контакти автора.</p>
+    </aside>
+
+    <footer>
+        <p>&copy; 2026 Майстренко З. Навчальний проєкт ФІОТ КПІ.</p>
+    </footer>
+
+</body>
+</html>
